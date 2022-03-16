@@ -1,0 +1,14 @@
+General Steps:
+
+1. Create functions for loading both the username and secret databases into memory.
+2. Make sure the server works, but the writeup makes it seem like it should already be good to go.
+3. Once a client connects, we have two different situations to program.
+	a. The client has a cookie from a previous session.
+	b. The cient does not have a cookie.
+4. Once credentials are established, the requested data will be transmitted.
+5. Send the client a cookie when closing the connection.
+
+Things to keep in mind:
+
+Cookie: We will need to make sure we understand what kind of information we need to send for the cookie.
+	This may be in the writeup already; I haven't checked for it.
