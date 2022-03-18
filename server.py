@@ -46,11 +46,11 @@ success_page = """
 #### Helper functions
 # Printing.
 def print_value(tag, value):
-    print "Here is the", tag
-    print "\"\"\""
-    print value
-    print "\"\"\""
-    print
+    print"Here is the", tag
+    print("\"\"\"")
+    print(value)
+    print("\"\"\"")
+    print()
 
 # Signal handler for graceful exit
 def sigint_handler(sig, frame):
@@ -83,6 +83,14 @@ while True:
     # TODO: Put your application logic here!
     # Parse headers and body and perform various actions
 
+    if  body == '':
+        print('nothing')
+    else:
+        print('something')
+        vars = body.split('&')
+        print(vars[0])
+        print(vars[1])
+
     # You need to set the variables:
     # (1) `html_content_to_send` => add the HTML content you'd
     # like to send to the client.
@@ -92,7 +100,7 @@ while True:
     # html_content_to_send = success_page + <secret>
     # html_content_to_send = bad_creds_page
     # html_content_to_send = logout_page
-    
+
     # (2) `headers_to_send` => add any additional headers
     # you'd like to send the client?
     # Right now, we don't send any extra headers.
@@ -103,10 +111,10 @@ while True:
     response += headers_to_send
     response += 'Content-Type: text/html\r\n\r\n'
     response += html_content_to_send
-    print_value('response', response)    
+    print_value('response', response)
     client.send(response)
     client.close()
-    
+
     print "Served one request/connection!"
     print
 
